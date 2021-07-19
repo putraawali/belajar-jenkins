@@ -1,29 +1,31 @@
 pipeline {
     agent any
     
-    tools {nodejs "node"}
+    tools {nodejs "NodeJs"}
     
-    stages("Cloning git") {
+    stages {
+      stage("Cloning git") {
         steps {
-            git "https://github.com/putraawali/belajar-jenkins.git"
+          git branch: 'main', url: 'https://github.com/putraawali/belajar-jenkins.git' 
         }
-    }
-    
-    stages("Install dependencies") {
-        steps {
-            sh "npm install"
-        }
-    }
-    
-    stages("Run test case") {
-        steps {
-            sh "npm run test"
-        }
-    }
-    
-    stages("Build") {
-        steps {
-            sh "npm run build"
-        }
+      }
+
+      stage("Install dependencies") {
+          steps {
+              sh "npm install"
+          }
+      }
+
+      stage("Run test case") {
+          steps {
+              sh "npm run test a"
+          }
+      }
+
+      stage("Build") {
+          steps {
+              sh "npm run build"
+          }
+      }
     }
 }
