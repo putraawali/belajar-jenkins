@@ -4,11 +4,11 @@ pipeline {
     tools {nodejs "NodeJs"}
     
     stages {
-      stage("Cloning git") {
-        steps {
-          git branch: 'main', url: 'https://github.com/putraawali/belajar-jenkins.git' 
-        }
-      }
+      // stage("Cloning git") {
+      //   steps {
+      //     git branch: 'main', url: 'https://github.com/putraawali/belajar-jenkins.git' 
+      //   }
+      // }
 
       stage("Install dependencies") {
           steps {
